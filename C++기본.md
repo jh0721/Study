@@ -8,7 +8,7 @@
 
 - <<,>> 연산자
 
-
+.
 
 ~~~c++
 #include <iostream>
@@ -30,13 +30,13 @@ int main() {
 
 ~~~
 
-
+.
 
 **함수 오버로딩 ( name mangling)**
 
 > 함수이름은 같으나 매개변수타입 또는 개수가 다른경우 name mangling을 통해 다른함수로 선언이 가능하다
 
-
+.
 
 ~~~c++
 #include <iostream>
@@ -63,7 +63,7 @@ int main() {
 }
 ~~~
 
-
+.
 
 **매개변수 default**
 
@@ -110,14 +110,14 @@ void func1(int n = 2)
 }
 ~~~
 
-
+.
 
 **Inline 함수**
 
 - 전처리기에서 실행됨 ( 매크로를 함수처럼 사용 가능 )
 - 자료형에 대해 제약이 있다 ( 템플릿으로 해결 가능 )
 
-
+.
 
 ~~~c++
 #include <iostream>
@@ -142,7 +142,7 @@ int main() {
 }
 ~~~
 
-
+.
 
 **Namespace**
 
@@ -150,7 +150,7 @@ int main() {
 - namespace 안에 namespace를 만드는 중첩 가능
 - using을 통해 namespace를 명시 가능
 
-
+.
 
 ~~~c++
 #include <iostream>
@@ -185,23 +185,66 @@ int main() {
 }
 ~~~
 
+.
+
+**자료형 bool ** 
+
+> c++의 참과 거짓을 나타내는 데이터 형이다
+
+~~~c++
+bool t = true; 
+bool f = false;
+~~~
+
+- 크기는 1byte
+
+.
+
+**Reference(참조자)**
+
+> 할당된 변수 메모리 공간에 붙여진 다른 이름을 의미한다
+
+- 참조자 선언
+
+  ~~~C++
+  int num1 = 1;
+  int &ref = num1;
+  ~~~
+
+- 참조하는 값과 항상 같은 값을 갖는다
+
+- 참조자의 수에는 제한이 없으며, 참조자를 대상으로도 참조자를 선언가능
+
+- 참조자 선언과 동시에 초기화가 진행되어야 하며, 반드시 변수를 참조해야 한다 ( NULL초기화도 불가능하다 )
+
+- 참조의 대상 변경이 불가능하다
+
+  ~~~c++
+  int num = 2;
+  int &ref = num;
+  int num2 = 1;
+  
+  ref = num2; // num = num2 와 동일한 문장
+  ~~~
+
+- Call by Reference 
+
+
+
+  ~~~c++
+  void swap(int &ref1,int &ref2)
+  {
+      int temp = ref1;
+      ref1 = ref2;
+      ref2 = temp;
+  }
+  ~~~
 
 
 
 
-- bool 형
 
-: C++ 추가 데이터타입
-
-
-
-- Reference(참조자)
-
-: 
-
-
-
-- new 와 delete
+**new 와 delete**
 
 : C++ 에서 객체의 동적할당
 
