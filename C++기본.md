@@ -136,7 +136,7 @@ void func(int n = 2)
 
 int main() {
 
-	overloading(SQUARE(23));
+	func(SQUARE(23));
 
 	return 0;
 }
@@ -189,7 +189,7 @@ int main() {
 
 **자료형 bool ** 
 
-> c++의 참과 거짓을 나타내는 데이터 형이다
+> c++의 참과 거짓을 나타내는 데이터 형
 
 ~~~c++
 bool t = true; 
@@ -217,7 +217,7 @@ bool f = false;
 
 - 참조자 선언과 동시에 초기화가 진행되어야 하며, 반드시 변수를 참조해야 한다 ( NULL초기화도 불가능하다 )
 
-- 참조의 대상 변경이 불가능하다
+- 한번 초기화 후 참조대상 변경이 불가능하다
 
   ~~~c++
   int num = 2;
@@ -227,18 +227,39 @@ bool f = false;
   ref = num2; // num = num2 와 동일한 문장
   ~~~
 
-- Call by Reference 
+- call by value, call by reference
 
+  call by value : 값에 의한 참조
+
+  call by reference : 주소값을 이용한 외부 변수 접근 
 
 
   ~~~c++
-  void swap(int &ref1,int &ref2)
-  {
-      int temp = ref1;
-      ref1 = ref2;
-      ref2 = temp;
-  }
+// 참조자를 이용한 Call by Reference 
+void swap(int &ref1,int &ref2)
+{
+    int temp = ref1;
+    ref1 = ref2;
+    ref2 = temp;
+}
   ~~~
+
+
+
+- const 와 참조자
+
+  참조자를 매개변수로하는 함수의 경우 변수의 값이 변경될 가능성이 있으므로, const 를 붙여 함수안에서 값이 변경되지 않음을 표시
+
+~~~C++
+int num = 1;
+func(num);
+count << num << endl;
+
+void func(int num); 
+void func(int &num); // 참조자의 경우 함수안에서 변수 값이 변경될 수 있음
+
+void func(const int &num); // const를 붙여 값이 변경되지 않음을 명시
+~~~
 
 
 
