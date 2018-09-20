@@ -2,9 +2,7 @@
 
 > #include <iostream> 헤더파일을 통해 입출력 함수 호출
 
-- cout
-
-- cin
+- cout,cin,endl
 
 - <<,>> 연산자
 
@@ -16,11 +14,13 @@
 using namespace std;
 
 int main() {
-
+	
+    // cout 출력, endl 줄바꾸기
 	cout << "test" << endl;
 
 	int value;
-
+	
+    // 입력값 받아 변수에 저장
 	cin >> value;
 
 	cout << "value:" << value << endl;
@@ -261,11 +261,41 @@ void func(int &num); // 참조자의 경우 함수안에서 변수 값이 변경
 void func(const int &num); // const를 붙여 값이 변경되지 않음을 명시
 ~~~
 
+​	
+
+​	상수변수를 참조하는 경우 참조자에도 const를 붙여야 한다
+
+~~~C++
+const int num = 1;
+const int &ref = num;
+// int &ref = num 컴파일 에러
+~~~
 
 
 
+**new 와 delete** 
 
-**new 와 delete**
+- **new**  동적 메모리 할당 키워드이며 반환값은 포인터 ( 변수 선언시 포인터로 선언)
 
-: C++ 에서 객체의 동적할당
+- **delete**  동적 메모리 할당 해제 ( 메모리 해제 후 NULL로 초기화 하는것이 좋다 )
+
+~~~C++
+#include <iostream>
+#include <string.h>
+
+int main() {
+
+    // 동적 메모리 할당
+	char *chr = new char[10];
+
+	strcpy(chr,"test");
+	cout << chr << endl;
+	
+    // 메모리 할당 해제
+	delete []chr;
+	chr = NULL;
+
+	return 0;
+}
+~~~
 
