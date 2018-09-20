@@ -235,6 +235,7 @@ bool f = false;
 
 
   ~~~c++
+
 // 참조자를 이용한 Call by Reference 
 void swap(int &ref1,int &ref2)
 {
@@ -242,9 +243,10 @@ void swap(int &ref1,int &ref2)
     ref1 = ref2;
     ref2 = temp;
 }
+
   ~~~
 
-
+.
 
 - const 와 참조자
 
@@ -261,7 +263,7 @@ void func(int &num); // 참조자의 경우 함수안에서 변수 값이 변경
 void func(const int &num); // const를 붙여 값이 변경되지 않음을 명시
 ~~~
 
-​	
+	
 
 ​	상수변수를 참조하는 경우 참조자에도 const를 붙여야 한다
 
