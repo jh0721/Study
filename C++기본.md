@@ -114,7 +114,9 @@ void func1(int n = 2)
 
 **Inline 함수**
 
-- 전처리기에서 실행됨 ( 매크로를 함수처럼 사용 가능 )
+- C++ 의 매크로 함수
+
+- 전처리기에서 실행되어 컴파일 전에 코드가 변경됨 ( 매크로를 함수처럼 사용 가능 )
 - 자료형에 대해 제약이 있다 ( 템플릿으로 해결 가능 )
 
 .
@@ -148,7 +150,7 @@ int main() {
 
 - 범위지정연산자(::)를 통해 namespace 범위의 함수 호출가능
 - namespace 안에 namespace를 만드는 중첩 가능
-- using을 통해 namespace를 명시 가능
+- using을 통해 namespace를 명시하여 namespace 이름 생략 가능
 
 .
 
@@ -227,6 +229,8 @@ bool f = false;
   ref = num2; // num = num2 와 동일한 문장
   ~~~
 
+.
+
 - call by value, call by reference
 
   call by value : 값에 의한 참조
@@ -265,7 +269,7 @@ void func(const int &num); // const를 붙여 값이 변경되지 않음을 명�
 
 	
 
-​	상수변수를 참조하는 경우 참조자에도 const를 붙여야 한다
+	상수변수를 참조하는 경우 참조자에도 const를 붙여야 한다
 
 ~~~C++
 const int num = 1;
