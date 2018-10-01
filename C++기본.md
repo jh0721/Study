@@ -189,7 +189,9 @@ int main() {
 
 .
 
-**자료형 bool ** 
+
+
+**자료형 bool** 
 
 > c++의 참과 거짓을 나타내는 데이터 형
 
@@ -231,11 +233,15 @@ bool f = false;
 
 .
 
+
+
 - call by value, call by reference
 
   call by value : 값에 의한 참조
 
   call by reference : 주소값을 이용한 외부 변수 접근 
+
+  .
 
 
   ~~~c++
@@ -252,9 +258,11 @@ void swap(int &ref1,int &ref2)
 
 .
 
+
+
 - const 와 참조자
 
-  참조자를 매개변수로하는 함수의 경우 변수의 값이 변경될 가능성이 있으므로, const 를 붙여 함수안에서 값이 변경되지 않음을 표시
+  - 참조자를 매개변수로하는 함수의 경우 변수의 값이 변경될 가능성이 있으므로, const 를 붙여 함수안에서 값이 변경되지 않음을 표시
 
 ~~~C++
 int num = 1;
@@ -267,9 +275,9 @@ void func(int &num); // 참조자의 경우 함수안에서 변수 값이 변경
 void func(const int &num); // const를 붙여 값이 변경되지 않음을 명시
 ~~~
 
-	
 
-	상수변수를 참조하는 경우 참조자에도 const를 붙여야 한다
+
+상수변수를 참조하는 경우 참조자에도 const를 붙여야 한다
 
 ~~~C++
 const int num = 1;
@@ -277,7 +285,7 @@ const int &ref = num;
 // int &ref = num 컴파일 에러
 ~~~
 
-
+.
 
 **new 와 delete** 
 
