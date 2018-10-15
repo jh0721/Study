@@ -233,15 +233,13 @@ bool f = false;
 
 .
 
-
-
 - call by value, call by reference
 
   call by value : 값에 의한 참조
 
   call by reference : 주소값을 이용한 외부 변수 접근 
 
-  .
+.
 
 
   ~~~c++
